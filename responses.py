@@ -3,8 +3,5 @@ def handle_response(message) -> str:
 
     if p_message in ("hi", "hello", "嗨", "哈嘍"):
         return 'Hi!!'
-
-    if "煙火" in p_message or "firework" in p_message.lower():
+    elif "煙火" in p_message or "firework" in p_message.lower():
         return '"Boom! 🎆🎇"'
-
-

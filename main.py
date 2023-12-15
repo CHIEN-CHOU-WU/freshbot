@@ -1,4 +1,9 @@
 import bot
+import os
+from dotenv import load_dotenv
 
 if __name__=='__main__':
-    bot.run_discord_bot()
+  load_dotenv()
+  TOKEN = os.getenv('DISCORD_TOKEN')
+  client = bot.CustomClient()
+  client.run(TOKEN)
