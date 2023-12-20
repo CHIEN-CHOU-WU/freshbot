@@ -64,6 +64,23 @@ class CustomClient(commands.Bot):
 
         await self.db.commit()
 
+        await self.cursor.execute("""
+                            create table if not exists register_2024_Q1 (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                            author_id VARCHAR(255) NOT NULL,
+                            first_name VARCHAR(255) NOT NULL,
+                            last_name VARCHAR(255) NOT NULL,
+                            nickname VARCHAR(255) NOT NULL,
+                            dates VARCHAR(255) NOT NULL,
+                            price_will_flag VARCHAR(255) NOT NULL,
+                            budget_flag VARCHAR(255) NOT NULL,
+                            learn_flag VARCHAR(255) NOT NULL,
+                            learn_other VARCHAR(255) NOT NULL
+                            );"""
+        )
+
+        await self.db.commit()
+
         print(f"{self.user} is now running!")
 
     async def on_member_join(self, member):

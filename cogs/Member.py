@@ -408,7 +408,7 @@ class Member(commands.Cog):
         embed.add_field(name="性別", value=result[7], inline=True)
         embed.add_field(name="稱呼", value=result[8], inline=True)
         embed.add_field(name="現居", value=result[5], inline=True)
-        embed.add_field(name="球齡", value=result[9], inline=True)
+        # embed.add_field(name="球齡", value=result[9], inline=True)
         embed.add_field(name="擅長位置", value=result[10], inline=True)
         embed.add_field(name="打過隊形", value=result[11], inline=True)
         embed.add_field(name="其他", value=result[12], inline=True)
