@@ -153,6 +153,7 @@ class Register(commands.Cog):
         
     @commands.command(name="報名")
     async def register(self, message):
+        
         result = await self.register_question(message)
 
         if result:
@@ -163,6 +164,7 @@ class Register(commands.Cog):
             self.cursor = await self.bot.db.cursor()
             await self.cursor.execute(insert_query, (str(message.author), result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7]))
             await self.bot.db.commit()
+            await message.channel.send("謝謝你的報名！溫馨提醒，此問卷不代表報名成功。台妹稍過幾日會再公佈報名成功的名字以及收取價錢。請一定要持續鎖定discord社群並開啟email通知。若想學習如何開啟email通知，請至公告專區 -> 好孩子要看頻道 裡查詢開啟email通知。")
 
 
 async def setup(bot):
